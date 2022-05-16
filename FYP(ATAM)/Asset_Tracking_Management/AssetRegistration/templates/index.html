@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+     <form method="POST" action="/asset">
+           {% csrf_token %}      <!--Generated a token on server-side-->
+       <div>
+           <br>
+           <p>
+               <h3>Assets Registration</h3>
+            </p>
+     
+             <div>
+                <p>Asset Id:</p>{{ form.Aid }}
+             </div>
+             <div>
+                <p>Asset Name:</p>{{ form.Aname }}
+             </div>
+             <div>
+                <p>Asset Type:</p>{{ form.Atype }}
+             </div>
+             <div>
+                <p>Asset Destination:</p>{{ form.Adestination }}
+             </div>
+             <div>
+                 <br>
+                 <button type="submit">Submit</button>
+
+             </div>
+      
+      
+      
+          </div>
+         
+      </form>
+</body>
+</html>
+

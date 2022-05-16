@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>  
+    <form method="POST" action="/update/{{asset.id}}">
+        {% csrf_token %}
+        <div>
+            <br>
+            <p>
+                <h3>Update Details</h3>
+            </p>
+        </div>
+        <div>
+            <p>Asset Id:</p>
+            <div>
+                <input type="text" name="Aid" value="{{AssetRegistration.Aid}}" />
+            </div>
+        </div>
+        <div>
+            <p>Asset Name:</p>
+            <div>
+                <input type="text" name="Aname" value="{{AssetRegistration.Aname}}" />
+            </div>
+        </div>
+        <div>
+            <p>Asset Type:</p>
+            <div>
+                <input type="text" name="Atype" value="{{AssetRegistration.Atype}}" />
+            </div>
+        </div>
+        <div>
+            <p>Asset Destination:</p>
+            <div>
+                <input type="text" name="Adestination" value="{{AssetRegistration.Adestination}}" />
+            </div>
+        </div>
+        <div>
+            <br>
+            <button type="submit">Update</button>       
+        </div>
+
+    </form>
+</body>
+</html>
